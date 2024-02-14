@@ -5,14 +5,109 @@ body {
   padding: 0;
 }
 
+
+.sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  padding-top: 20px;
+  z-index: 1; /* Garante que a barra lateral esteja na frente do conteúdo */
+  border-right: 1px solid #666; /* Adiciona uma borda direita para separar a barra lateral do conteúdo */
+  animation: slideInLeft 1s ease-out;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.sidebar ul li {
+  padding: 10px;
+  animation: fadeInLeft 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.sidebar h2 {
+  color: #fff;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+}
+
+.sidebar ul li button {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+  text-align: left;
+}
+
+/* Estilos do conteúdo */
+.content {
+  padding: 20px;
+  margin-left: 220px; /* Largura da barra lateral + margem */
+  z-index: 0; /* Garante que o conteúdo esteja atrás da barra lateral */
+  animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 h1 {
   text-align: center;
   margin: 20px 0;
+  animation: fadeInUp 1s ease-out;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 .patches-container {
-  font-family: "Nunito", sans-serif;
-  max-width: 800px;
+  max-width: calc(800px - 220px); /* Largura máxima ajustada para acomodar a largura do menu lateral */
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
@@ -21,7 +116,6 @@ h1 {
 }
 
 .patch-button {
-  font-family: "Nunito", sans-serif;
   display: inline-block;
   padding: 10px 20px;
   background-color: #313131;
@@ -46,6 +140,9 @@ h1 {
 .patch-content {
   display: none;
   margin-top: 20px;
+  overflow: auto; /* Adiciona uma barra de rolagem quando o conteúdo excede o tamanho do contêiner */
+  margin-left: 240px; /* Ajusta a margem para garantir que o conteúdo não fique sob a barra lateral */
+  max-width: calc(800px - 240px); /* Largura máxima ajustada para acomodar a barra lateral */
 }
 
 .patch-content.active {
@@ -55,146 +152,18 @@ h1 {
 .patch-content h3 {
   font-size: 20px;
   margin-bottom: 10px;
+  word-wrap: break-word; /* Permite que as palavras sejam quebradas em várias linhas */
 }
 
 .patch-content p {
   font-size: 16px;
   line-height: 1.5;
-}
-
-.patches-container {
-  font-family: "Nunito", sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #8f8f8f;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.patch-button {
-  font-family: "Nunito", sans-serif;
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #242424;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-right: 10px;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.patch-button:last-child {
-  margin-right: 0;
-}
-
-.patch-button:hover,
-.patch-button.active {
-  background-color: #160000;
-  transform: scale(1.1);
-}
-
-.patch-content {
-  display: none;
-  margin-top: 20px;
-  opacity: 0;
-  animation: fade-in 0.5s ease-in forwards;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.patch-content.active {
-  display: block;
-  opacity: 1;
-}
-.patch-details-button.active {
-  background-color: #45a049;
-  transform: scale(1.1);
-}
-/* Resto do seu CSS */
-
-.made-by-dark {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  color: #ffffff;
-  font-size: 12px;
-  opacity: 1;
-}
-
-body {
-  background-color: #505050;
-}
-
-.made-by-dark {
-  animation: rotate 2s infinite linear;
-}
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.patch-button.active {
-  animation: pulse 2.1s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-h1 {
-  animation: move-header 2s infinite alternate;
-}
-
-@keyframes move-header {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(10px);
-  }
-}
-
-.patch-details-button {
-  font-family: "Nunito", sans-serif;
-  background-color: #292929;
-  color: white;
-  border: none;
-  padding: 0px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.show-details:hover {
-  background-color: #003303;
+  word-wrap: break-word; /* Permite que as palavras sejam quebradas em várias linhas */
 }
 
 .patch-details {
   display: none;
-  background-color: #535353;
+  background-color: #a7a7a7;
   border: 1px solid rgb(44, 0, 0);
   padding: 20px;
   max-width: 760px;
@@ -203,22 +172,10 @@ h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.patch-details {
-  opacity: 0;
-  animation: fade-in-animation 1s forwards;
-}
-
-@keyframes fade-in-animation {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+/* Estilos do botão Detalhes das Patches */
 .acabar {
   font-family: "Nunito", sans-serif;
-  background-color: #3b3b3b;
+  background-color: #757575;
   color: white;
   padding: 10px 20px;
   font-size: 16px;
@@ -227,9 +184,19 @@ h1 {
   border-radius: 5px;
   transition: background-color 0.3s ease; /* Adiciona uma transição suave na cor de fundo */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra sutil */
+  animation: fadeIn 1s ease-out;
 }
 
 .acabar:hover {
-  background-color: rgb(56, 8, 0);
+  background-color: rgb(94, 0, 218);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.made-by-dark {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: #000000;
+  font-size: 12px;
+  opacity: 0.7; /* Ajuste a opacidade conforme necessário */
 }

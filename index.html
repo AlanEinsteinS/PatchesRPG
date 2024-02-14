@@ -3,23 +3,24 @@
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/styles.css">
-    <script src="static/script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
   <title>Patches do dark.</title>
 </head>
 <body>
 
-  <h1>🛠️ Patches do Sistema do RPG 4.9 🛠️</h1>
+  <h1>🛠️ Patches do Sistema do RPG 5.0 🛠️</h1>
 
-  <div class="patches-container">
-    <div>
-      <button id="patch1-button" class="patch-button" onclick="exibirConteudo('patch1')">💪Combatente</button>
-      <button id="patch2-button" class="patch-button" onclick="exibirConteudo('patch2')">🔫Especialista</button>
-      <button id="patch3-button" class="patch-button" onclick="exibirConteudo('patch3')">💮Ocultista</button>
-      <button id="patch4-button" class="patch-button" onclick="exibirConteudo('patch4')">🔯Outro Lado</button>
-      <button id="patch5-button" class="patch-button" onclick="exibirConteudo('patch5')">🤷‍♂️Misc.</button>
-      
-    </div>
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li><button id="patch1-button" class="patch-button" onclick="exibirConteudo('patch1')">💪 Combatente</button></li>
+      <li><button id="patch2-button" class="patch-button" onclick="exibirConteudo('patch2')">🔫 Especialista</button></li>
+      <li><button id="patch3-button" class="patch-button" onclick="exibirConteudo('patch3')">💮 Ocultista</button></li>
+      <li><button id="patch4-button" class="patch-button" onclick="exibirConteudo('patch4')">🔯 Outro Lado</button></li>
+      <li><button id="patch5-button" class="patch-button" onclick="exibirConteudo('patch5')">🤷‍♂️ Misc.</button></li>
+    </ul>
+  </div>
 
     <div id="patch1-content" class="patch-content">
       
@@ -1358,8 +1359,6 @@ A proteção causa 2d8 de dano de perfuração se você agarrar um ser. Se aplic
 
 </div>
 </ul>
-<!-- Resto do seu código -->
-    <span class="made-by-dark">made by dark.</span>
-
+<div class="made-by-dark">Feito por Alan</div>
   </body>
   

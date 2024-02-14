@@ -33,6 +33,7 @@ function toggleDetalhesPatches2() {
     patchDetails.style.display = "block";
   }
 }
+
 function toggleDetalhesPatches3() {
   var patchDetails = document.getElementById("patch-details3");
   if (patchDetails.style.display === "block") {
@@ -41,6 +42,7 @@ function toggleDetalhesPatches3() {
     patchDetails.style.display = "block";
   }
 }
+
 function toggleDetalhesPatches4() {
   var patchDetails = document.getElementById("patch-details4");
   if (patchDetails.style.display === "block") {
@@ -49,6 +51,7 @@ function toggleDetalhesPatches4() {
     patchDetails.style.display = "block";
   }
 }
+
 function toggleDetalhesPatches5() {
   var patchDetails = document.getElementById("patch-details5");
   if (patchDetails.style.display === "block") {
@@ -57,3 +60,4 @@ function toggleDetalhesPatches5() {
     patchDetails.style.display = "block";
   }
 }
+
