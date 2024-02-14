@@ -1,0 +1,235 @@
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.patches-container {
+  font-family: "Nunito", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.patch-button {
+  font-family: "Nunito", sans-serif;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #313131;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.patch-button:last-child {
+  margin-right: 0;
+}
+
+.patch-button:hover {
+  background-color: #45a049;
+}
+
+.patch-content {
+  display: none;
+  margin-top: 20px;
+}
+
+.patch-content.active {
+  display: block;
+}
+
+.patch-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.patch-content p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.patches-container {
+  font-family: "Nunito", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #8f8f8f;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.patch-button {
+  font-family: "Nunito", sans-serif;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #242424;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.patch-button:last-child {
+  margin-right: 0;
+}
+
+.patch-button:hover,
+.patch-button.active {
+  background-color: #160000;
+  transform: scale(1.1);
+}
+
+.patch-content {
+  display: none;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.patch-content.active {
+  display: block;
+  opacity: 1;
+}
+.patch-details-button.active {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+/* Resto do seu CSS */
+
+.made-by-dark {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: #ffffff;
+  font-size: 12px;
+  opacity: 1;
+}
+
+body {
+  background-color: #505050;
+}
+
+.made-by-dark {
+  animation: rotate 2s infinite linear;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.patch-button.active {
+  animation: pulse 2.1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+h1 {
+  animation: move-header 2s infinite alternate;
+}
+
+@keyframes move-header {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+.patch-details-button {
+  font-family: "Nunito", sans-serif;
+  background-color: #292929;
+  color: white;
+  border: none;
+  padding: 0px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.show-details:hover {
+  background-color: #003303;
+}
+
+.patch-details {
+  display: none;
+  background-color: #535353;
+  border: 1px solid rgb(44, 0, 0);
+  padding: 20px;
+  max-width: 760px;
+  margin: 20px auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.patch-details {
+  opacity: 0;
+  animation: fade-in-animation 1s forwards;
+}
+
+@keyframes fade-in-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.acabar {
+  font-family: "Nunito", sans-serif;
+  background-color: #3b3b3b;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave na cor de fundo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra sutil */
+}
+
+.acabar:hover {
+  background-color: rgb(56, 8, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
