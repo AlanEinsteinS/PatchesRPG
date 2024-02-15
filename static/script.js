@@ -61,3 +61,12 @@ function toggleDetalhesPatches5() {
   }
 }
 
+function toggleDetalhesPatches6() {
+  var patchDetails = document.getElementById("patch-details6");
+  if (patchDetails.style.display === "block") {
+    patchDetails.style.display = "none";
+  } else {
+    patchDetails.style.display = "block";
+  }
+}
+
