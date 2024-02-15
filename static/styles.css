@@ -6,6 +6,8 @@ body {
 }
 
 
+
+
 .sidebar {
   height: 100%;
   width: 200px;
@@ -47,7 +49,22 @@ body {
 .sidebar h2 {
   color: #fff;
   text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  animation: pulse 2s infinite, color-change 5s infinite alternate;
+  font-size: 40px;
 }
+
+@keyframes pulse {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1); }
+  100% { transform: scale(0.9); }
+}
+
+@keyframes color-change {
+  0% { color: #0000FF; } /* Cor inicial: azul */
+  100% { color: #00FFFF; } /* Cor final: ciano */
+}
+
 
 .sidebar ul {
   list-style-type: none;
@@ -67,7 +84,17 @@ body {
   cursor: pointer;
   padding: 5px;
   text-align: left;
+  font-family: 'Kanit', sans-serif; /* Definindo a fonte para Roboto */
+  
 }
+
+.sidebar ul li button:active {
+  background-color: #00b7ff; /* Cor de fundo destacada quando clicado */
+  color: #ffffff; /* Cor do texto destacada quando clicado */
+}
+
+
+
 
 /* Estilos do conteúdo */
 .content {
@@ -91,9 +118,16 @@ body {
 h1 {
   text-align: center;
   margin: 20px 0;
-  animation: fadeInUp 1s ease-out;
+  animation: fadeInUp 3.5s ease-out, pulse 4s infinite; /* Aplicando a animação de pulsação */
+  font-family: "Kanit", sans-serif;
+  
 }
 
+@keyframes pulse {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1); }
+  100% { transform: scale(0.9); }
+}
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -106,6 +140,7 @@ h1 {
 }
 
 
+
 .patches-container {
   max-width: calc(800px - 220px); /* Largura máxima ajustada para acomodar a largura do menu lateral */
   margin: 0 auto;
@@ -114,6 +149,21 @@ h1 {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.patch-content, .patch-details {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
 
 .patch-button {
   display: inline-block;
@@ -129,12 +179,13 @@ h1 {
   transition: background-color 0.3s;
 }
 
+
 .patch-button:last-child {
   margin-right: 0;
 }
 
 .patch-button:hover {
-  background-color: #45a049;
+  background-color: #0b00a8;
 }
 
 .patch-content {
