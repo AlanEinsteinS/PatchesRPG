@@ -14,7 +14,13 @@ function exibirConteudo(patchId) {
 
   var content = document.getElementById(patchId + "-content");
   content.classList.add("active");
+
+  // Reproduzir o som de efeito sonoro
+  var soundEffect = document.getElementById("soundEffect");
+  soundEffect.play();
 }
+
+
 
 function toggleDetalhesPatches1() {
   var patchDetails = document.getElementById("patch-details1");
@@ -104,5 +110,4 @@ for (var i = 0; i < patchButtons.length; i++) {
     closeAllDetails();
   });
 }
-
 
